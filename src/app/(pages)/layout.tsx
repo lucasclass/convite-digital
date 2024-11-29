@@ -1,24 +1,6 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import Pagina from "@/components/_template/page";
 
-const font = Inter({
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Seu evento começa aqui",
-  description: "Aplicação FullStack de eventos",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-BR">
-      <body className={`${font.className} antialiased`}>{children}</body>
-    </html>
-  );
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Layout(props: any) {
+  return <Pagina>{props.children}</Pagina>;
 }
